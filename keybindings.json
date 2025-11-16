@@ -1,0 +1,122 @@
+// Place your key bindings in this file to override the defaults
+// ~/.config/Code/User/keybindings.json
+// 复制全部 → 粘贴 → 保存 → 重启 VSCode
+[
+ // ==================== 编辑增强（Cmd+K 前缀） ====================
+ {
+ "key": "cmd+k cmd+x",
+ "command": "editor.action.deleteLines",
+ "when": "editorTextFocus && !editorReadonly"
+ },
+ {
+ "key": "cmd+k cmd+c",
+ "command": "editor.action.clipboardCutAction",
+ "when": "editorTextFocus && !editorReadonly"
+ },
+ {
+ "key": "cmd+k cmd+/",
+ "command": "editor.action.commentLine",
+ "when": "editorTextFocus && !editorReadonly"
+ },
+ {
+ "key": "cmd+k cmd+shift+f",
+ "command": "editor.action.formatSelection",
+ "when": "editorHasSelection && editorTextFocus"
+ },
+
+ // ==================== 窗口/面板/标签（Ctrl + 单键） ====================
+ // 左右组切换（Ctrl+h/l）
+ { "key": "ctrl+h", "command": "workbench.action.focusLeftGroup", "when": "editorTextFocus" },
+ { "key": "ctrl+l", "command": "workbench.action.focusRightGroup", "when": "editorTextFocus" },
+ // 上下组切换（Ctrl+k/j）
+ { "key": "ctrl+k", "command": "workbench.action.focusAboveGroup", "when": "editorTextFocus" },
+ { "key": "ctrl+j", "command": "workbench.action.focusBelowGroup", "when": "editorTextFocus" },
+
+ // 标签操作
+ { "key": "ctrl+n", "command": "workbench.action.files.newUntitledFile" },
+ { "key": "ctrl+w", "command": "workbench.action.closeActiveEditor" },
+
+ // 快速切换标签 1~9（Cmd+1~9 保留给系统，改用 Ctrl+1~9）
+ { "key": "ctrl+1", "command": "workbench.action.openEditorAtIndex1" },
+ { "key": "ctrl+2", "command": "workbench.action.openEditorAtIndex2" },
+ { "key": "ctrl+3", "command": "workbench.action.openEditorAtIndex3" },
+ { "key": "ctrl+4", "command": "workbench.action.openEditorAtIndex4" },
+ { "key": "ctrl+5", "command": "workbench.action.openEditorAtIndex5" },
+ { "key": "ctrl+6", "command": "workbench.action.openEditorAtIndex6" },
+ { "key": "ctrl+7", "command": "workbench.action.openEditorAtIndex7" },
+ { "key": "ctrl+8", "command": "workbench.action.openEditorAtIndex8" },
+ { "key": "ctrl+9", "command": "workbench.action.openEditorAtIndex9" },
+
+ // 面板切换
+ { "key": "ctrl+b", "command": "workbench.action.toggleSidebarVisibility" },
+ { "key": "ctrl+t", "command": "workbench.action.terminal.toggleTerminal" },
+ { "key": "ctrl+o", "command": "workbench.action.output.toggleOutput" },
+ { "key": "ctrl+m", "command": "workbench.action.toggleMaximizedPanel" },
+
+ // ==================== 搜索增强 ====================
+ {
+ "key": "cmd+ctrl+s",
+ "command": "workbench.action.gotoSymbol",
+ "when": "editorTextFocus"
+ },
+
+ // ==================== 调试 & 运行（Cmd + 数字行） ====================
+ { "key": "cmd+1", "command": "workbench.action.debug.start", "when": "debuggersAvailable" },
+ { "key": "cmd+2", "command": "workbench.action.debug.stop", "when": "inDebugMode" },
+ { "key": "cmd+3", "command": "workbench.action.debug.continue", "when": "inDebugMode" },
+ { "key": "cmd+4", "command": "workbench.action.debug.stepOver", "when": "inDebugMode" },
+ { "key": "cmd+5", "command": "workbench.action.debug.stepInto", "when": "inDebugMode" },
+ { "key": "cmd+6", "command": "workbench.action.debug.stepOut", "when": "inDebugMode" },
+ { "key": "cmd+7", "command": "workbench.action.terminal.toggleTerminal" },
+ { "key": "cmd+8", "command": "workbench.action.terminal.new" },
+ { "key": "cmd+9", "command": "workbench.action.tasks.runTask" },
+ { "key": "cmd+0", "command": "workbench.action.tasks.build" },
+
+ // ==================== 个人宏/插件区（Cmd+Ctrl+） ====================
+ // 示例：格式化 + 保存（两步宏）
+ {
+ "key": "cmd+ctrl+s",
+ "command": "editor.action.formatDocument",
+ "when": "editorTextFocus"
+ },
+ {
+ "key": "cmd+ctrl+s",
+ "command": "workbench.action.files.save",
+ "when": "editorTextFocus"
+ },
+
+ // ==================== 禁用冲突默认键（macOS 专用） ====================
+ // 禁用 Cmd+Shift+K 删除行（避免冲突）
+ {
+ "key": "cmd+shift+k",
+ "command": "-editor.action.deleteLines",
+ "when": "editorTextFocus && !editorReadonly"
+ },
+
+ // 防止 Cmd+K 系列被系统拦截（macOS 偶尔抢占）
+ {
+ "key": "cmd+k",
+ "command": "noop",
+ "when": "editorTextFocus"
+},
+{
+    "key": "g d",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus"
+},
+{
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus"
+},
+{
+"key": "ctrl+,",
+"command": "workbench.action.navigateBack",
+"when": "editorTextFocus"
+},
+{
+"key": "ctrl+.",
+"command": "workbench.action.navigateForward",
+"when": "editorTextFocus"
+}
+]
